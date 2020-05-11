@@ -356,29 +356,123 @@ else
  * Codeing Challenge 3
  */
 
- function calculateTip(bill)
+//  function calculateTip(bill)
+//  {
+//     var percentage;
+//     if (bill < 50)
+//     {
+//         percentage = .2;
+//     }
+//     else if (bill >= 50 && bill < 200)
+//     {
+//         percentage = .15;
+//     }
+//     else
+//     {
+//         percentage = .1;
+//     }
+//     return percentage * bill;
+//  }
+
+// var bills = [124, 48, 268];
+// var tips = [calculateTip(bills[0]),
+//             calculateTip(bills[1]),
+//             calculateTip(bills[2])];
+
+
+// var finalValues = [bills[0] + tips[0], bills[1] + tips[1], bills[2] + tips[2]];
+// console.log(tips, finalValues);
+
+/***************************
+ * Objects and Properties
+ */
+
+ // Object literal
+//  var john = 
+//  {
+//      firstName: 'John',
+//      lastName: 'Smith',
+//      birthYear: 1992,
+//      family: ['Jane', 'Mark', 'Bob', 'Emily'],
+//      job: 'teacher',
+//      isMarried: false
+//  }
+
+//  console.log(john.firstName);
+//  console.log(john['lastName']);
+//  var x = 'birthYear';
+//  console.log(john[x]);
+
+//  john.job = 'designer';
+//  john['isMarried'] = true;
+//  console.log(john);
+
+//  // new Object syntax
+//  var jane = new Object();
+//  jane.firstName = 'Jane';
+//  jane.birthYear = 1969;
+//  jane['lastName'] = 'Smith';
+//  console.log(jane);
+
+/*************************
+ * Objects and Methods
+ */
+
+//   var john = 
+//  {
+//      firstName: 'John',
+//      lastName: 'Smith',
+//      birthYear: 1992,
+//      family: ['Jane', 'Mark', 'Bob', 'Emily'],
+//      job: 'teacher',
+//      isMarried: false,
+//      calcAge: function()
+//      {
+//          this.age = 2020 - this.birthYear;
+//      }
+//  }
+
+//  john.calcAge();
+//  console.log(john);
+
+/************************
+ * Coding Challenge 4
+ */
+
+ var john = 
  {
-    var percentage;
-    if (bill < 50)
-    {
-        percentage = .2;
-    }
-    else if (bill >= 50 && bill < 200)
-    {
-        percentage = .15;
-    }
-    else
-    {
-        percentage = .1;
-    }
-    return percentage * bill;
+     name: 'John Smith',
+     mass: 70,
+     height: 2,
+     BMI: function()
+     {
+        johnBMI = this.mass / (this.height * this.height);
+     }
  }
 
-var bills = [124, 48, 268];
-var tips = [calculateTip(bills[0]),
-            calculateTip(bills[1]),
-            calculateTip(bills[2])];
+ var mark = 
+ {
+     name: 'Mark Smith',
+     mass: 75,
+     height: 2,
+     BMI: function()
+     {
+         markBMI = this.mass / (this.height * this.height);
+     }
+ }
 
+ john.BMI();
+ mark.BMI();
 
-var finalValues = [bills[0] + tips[0], bills[1] + tips[1], bills[2] + tips[2]];
-console.log(tips, finalValues);
+ if (johnBMI > markBMI)
+ {
+     console.log(john.name + ' has a larger BMI of '+ johnBMI + ' than ' + mark.name + ' who has ' + markBMI);
+ }
+ else if (markBMI > johnBMI)
+ {
+    console.log(mark.name + ' has a larger BMI of ' + markBMI + ' than ' + john.name + ' whos has ' + johnBMI);
+ }
+ else
+ {
+     console.log('They have the same BMI.');
+ }
